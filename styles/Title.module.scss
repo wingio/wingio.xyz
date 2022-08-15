@@ -1,0 +1,31 @@
+.title {
+    padding: 3em;
+    text-align: center;
+
+    h1 {
+        font-family: "TS Block Bold";
+        margin: 0;
+        font-size: 27pt;
+        line-height: 27pt;
+        white-space: nowrap
+    }
+
+    :nth-child(2) {
+        opacity: .5;
+    }
+
+    :nth-child(3) {
+        opacity: .2;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .title {
+        text-align: initial;
+
+        h1 {
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+    }
+}

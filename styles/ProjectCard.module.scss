@@ -1,0 +1,61 @@
+.card {
+    max-width: 80%;
+    background-color: white;
+    border-radius: 61px;
+    padding: 1.3em;
+    margin-bottom: 2em;
+
+    .logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    h2 {
+        color: black;
+        font-family: "TS Block Bold";
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    p {
+        color: black;
+        font-family: 'Arial';
+        font-weight: 600;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .links {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+
+        svg {
+            height: 2.5rem;
+            cursor: pointer;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .card {
+        max-width: 380px;
+        background-color: white;
+        border-radius: 71px;
+
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+}

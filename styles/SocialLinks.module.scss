@@ -1,0 +1,30 @@
+.socials {
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    justify-content: center;
+    width: 100%;
+    
+
+    svg {
+        height: 35px;
+        margin: 5px;
+        z-index: 0;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0px 0px 20px -8px #000;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .socials {
+        display: flex;
+        bottom: 10px;
+        right: 10px;
+        width: min-content;
+    
+        svg {
+            height: 40px;
+        }
+    }
+}

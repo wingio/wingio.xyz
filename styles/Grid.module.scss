@@ -1,0 +1,21 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+        flex: 1 0 auto;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .grid {
+        margin-left: 3em;
+        justify-content: start;
+
+        div {
+            flex: 1 0 auto;
+            margin-right: 2em;
+        }
+    }
+}
