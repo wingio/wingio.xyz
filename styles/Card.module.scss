@@ -1,0 +1,15 @@
+.card {
+    max-width: 80%;
+    background-color: white;
+    border-radius: 61px;
+    padding: 1.3em;
+    margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 600px) {
+    .card {
+        max-width: 380px;
+        background-color: white;
+        border-radius: 71px;
+    }
+}

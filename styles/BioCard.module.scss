@@ -1,0 +1,73 @@
+.bio {
+    color: black;
+    font-family: 'Arial';
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0 1em;
+}
+
+.activity {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: .6em;
+    justify-content: flex-start;
+    align-items: center;
+    
+    .largeImage {
+        width: 70px;
+        height: 70px;
+        border-radius: 1em;
+
+        &.spin {
+            animation: spin 10s infinite linear;
+            border-radius: 50%;
+        }
+    }
+
+    .smallImage {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-left: -20px;
+        margin-top: 55px;
+    }
+
+    .title {
+        font-family: "Arial";
+        color: black;
+        margin: 0;
+        padding: 0;
+        font-size: medium;
+    }
+
+    .details {
+        font-family: "Arial";
+        color: black;
+        margin: 0;
+        padding: 0;
+        font-size: small;
+    }
+
+    .state {
+        font-family: "Arial";
+        color: black;
+        margin: 0;
+        padding: 0;
+        font-size: small;
+    }
+
+    div {
+        margin: 0 0 0 1em!important;
+    }
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
