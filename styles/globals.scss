@@ -23,6 +23,9 @@ a {
     background-image: url("https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=en-US");
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
   }
 }
 
@@ -30,4 +33,3 @@ a {
   font-family: 'TS Block Bold';
   src: url('/fonts/TS Block Bold.ttf') format('truetype')
 }
-

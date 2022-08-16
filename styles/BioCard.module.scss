@@ -1,18 +1,28 @@
+.icon {
+    width: 1.8em;
+    margin: 10px;
+}
+
 .bio {
     color: black;
     font-family: 'Arial';
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0px;
-    padding: 0 1em;
+    padding: 0 0.8em;
+
+    &:last-child {
+        padding-bottom: 2em;
+    }
 }
 
 .activity {
     display: flex;
     flex-wrap: nowrap;
-    padding: .6em;
+    padding: .8em;
     justify-content: flex-start;
     align-items: center;
+    margin-top: 10px;
     
     .largeImage {
         width: 70px;
@@ -58,9 +68,20 @@
     }
 
     div {
-        margin: 0 0 0 1em!important;
+        margin: 0 0 0 1em;
     }
 
+}
+
+@media only screen and (min-width: 600px) {
+    .icon {
+        width: 2.3em;
+    }
+
+    .bio {
+        font-size: 20px;
+        margin-bottom: inherit;
+    }
 }
 
 @keyframes spin {

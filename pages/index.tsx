@@ -18,10 +18,10 @@ const Home: NextPage = () => {
 
       <div className={styles.header}>
         <Title />
-        <BioCard />
       </div>
 
       <Grid>
+        <BioCard />
         <ProjectCard name="Logra" description="Material You logcat viewer for Android" github='wingio/Logra'/>
         <ProjectCard name="Aperii" description="Open source social media site based off Twitter" github='Aperii' url='https://aperii.com'/>
       </Grid>

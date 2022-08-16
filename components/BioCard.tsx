@@ -13,9 +13,9 @@ const BioCard: FunctionComponent = () => {
 
     return (
         <Card>
-            <About style={{width: "2em", margin: "10px"}}/>
+            <About className={styles.icon} />
             <p className={styles.bio}>
-                I'm a 19 year old developer that specializes in TypeScript/JavaScript, Java, and Kotlin.
+                I'm a 19 year old developer that specializes in TS/JS, Java, and Kotlin.
             </p>
             {lanyard.status && lanyard.status.activities.filter(a => a.type != 4).length > 0 ? <>
                 <Activity activity={lanyard.status.activities.filter(a => a.type != 4)[0]} spotify={lanyard.status?.spotify}/>
