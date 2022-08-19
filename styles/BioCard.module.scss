@@ -1,15 +1,18 @@
+
+
 .icon {
-    width: 1.8em;
+    width: 2.3em;
     margin: 10px;
 }
 
 .bio {
     color: black;
-    font-family: 'Arial';
-    font-weight: 600;
-    font-size: 16px;
+    font-family: 'Inter';
+    font-weight: 420;
+    font-size: 15px;
     margin: 0px;
-    padding: 0 0.8em;
+    padding: 0 0;
+    text-align: center;
 
     &:last-child {
         padding-bottom: 2em;
@@ -19,7 +22,7 @@
 .activity {
     display: flex;
     flex-wrap: nowrap;
-    padding: .8em;
+    padding: .8em 0;
     justify-content: flex-start;
     align-items: center;
     margin-top: 10px;
@@ -44,7 +47,7 @@
     }
 
     .title {
-        font-family: "Arial";
+        font-family: "Inter";
         color: black;
         margin: 0;
         padding: 0;
@@ -52,7 +55,7 @@
     }
 
     .details {
-        font-family: "Arial";
+        font-family: "Inter";
         color: black;
         margin: 0;
         padding: 0;
@@ -60,7 +63,7 @@
     }
 
     .state {
-        font-family: "Arial";
+        font-family: "Inter";
         color: black;
         margin: 0;
         padding: 0;
@@ -68,7 +71,7 @@
     }
 
     div {
-        margin: 0 0 0 1em;
+        margin: 0 0 0 1em!important;
     }
 
 }

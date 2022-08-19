@@ -10,10 +10,7 @@
 
 @media only screen and (min-width: 600px) {
     .grid {
-        margin-left: 3em;
-        justify-content: start;
-
-        div {
+        > div {
             flex: 1 0 auto;
             margin-right: 2em;
         }

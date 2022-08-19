@@ -6,17 +6,19 @@
 
 .title {
     color: black;
-    font-family: "TS Block Bold";
-    font-size: 1.5rem;
+    font-family: "Mont";
+    font-size: 1.7rem;
     margin: 10px 0;
+    font-weight: 2000;
 }
 
 .body {
     color: black;
-    font-family: 'Arial';
-    font-weight: 600;
-    font-size: 16px;
+    font-family: 'Inter';
+    font-weight: 420;
+    font-size: 15px;
     margin: 0;
+    text-align: center;
 }
 
 .links {
@@ -38,7 +40,7 @@
     }
 
     .title {
-        font-size: 1.7rem;
+        font-size: 2rem;
     }
 
     .body {

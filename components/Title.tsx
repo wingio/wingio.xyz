@@ -4,9 +4,9 @@ import styles from "../styles/Title.module.scss"
 const Title: FunctionComponent = () => {
     return (
         <div className={styles.title}>
-            <h1>Hi, I'm Wing</h1>
-            <h1>Hi, I'm Wing</h1>
-            <h1>Hi, I'm Wing</h1>
+            <h1>HI, I'M WING</h1>
+            <h1>HI, I'M WING</h1>
+            <h1>HI, I'M WING</h1>
         </div>
     )
 }

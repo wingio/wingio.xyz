@@ -2,8 +2,11 @@
     max-width: 80%;
     background-color: white;
     border-radius: 61px;
-    padding: 1.3em;
+    padding: 1.5em;
     margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media only screen and (min-width: 600px) {
