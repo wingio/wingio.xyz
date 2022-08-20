@@ -23,10 +23,10 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
                 {props.description}
             </p>
             <div className={styles.links}>
-                {props.url ? <a href={props.url} target="_blank">
+                {props.url ? <a href={props.url} target="_blank" rel="noreferrer">
                     <LinkIcon style={{padding: "5px"}} />
                 </a> : <></>}
-                <a href={`https://github.com/${props.github}`} target="_blank">
+                <a href={`https://github.com/${props.github}`} target="_blank" rel="noreferrer">
                     <Github />
                 </a>
             </div>
