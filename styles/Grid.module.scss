@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    div {
+    > div {
         flex: 1 0 auto;
     }
 }
