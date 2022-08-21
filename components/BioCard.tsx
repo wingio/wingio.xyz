@@ -13,7 +13,7 @@ const BioCard: FunctionComponent = () => {
 
     return (
         <Card>
-            <About className={styles.icon} />
+            <About className={styles.icon} color="black"/>
             <p className={styles.bio}>
                 I'm a 19 year old developer that specializes in TS/JS, Java, and Kotlin.
             </p>

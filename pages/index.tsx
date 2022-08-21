@@ -19,6 +19,8 @@ const Home: NextPage = () => {
       <div className={styles.header}>
         <Title />
       </div>
+      
+      <SocialLinks></SocialLinks>
 
       <Grid>
         <BioCard />
@@ -26,7 +28,6 @@ const Home: NextPage = () => {
         <ProjectCard name="Aperii" description="Open source social media site based off Twitter" github='Aperii' url='https://aperii.com'/>
       </Grid>
 
-      <SocialLinks></SocialLinks>
     </div>
   )
 }

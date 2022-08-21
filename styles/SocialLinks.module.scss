@@ -1,18 +1,15 @@
 .socials {
     display: flex;
-    position: fixed;
-    bottom: 10px;
+    padding: 1em;
     justify-content: center;
     width: 100%;
     
-
     svg {
         height: 35px;
         margin: 5px;
         z-index: 0;
         cursor: pointer;
         border-radius: 50%;
-        box-shadow: 0px 0px 20px -8px #000;
     }
 }
 
