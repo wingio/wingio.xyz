@@ -24,7 +24,7 @@ const SocialLinks: FunctionComponent = () => {
         <a href="https://twitter.com/WingCanTalk" target="_blank" rel="me noreferrer">
             <Twitter />
         </a>
-        <a href="https://mastodon.online/@wing" target="_blank" rel="me noreferrer">
+        <a href="https://androiddev.social/@wing" target="_blank" rel="me noreferrer">
             <Mastodon />
         </a>
     </div>)
