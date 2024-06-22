@@ -15,7 +15,7 @@ const BioCard: FunctionComponent = () => {
         <Card>
             <About className={styles.icon} color="black"/>
             <p className={styles.bio}>
-                I'm a 19 year old developer that specializes in TS/JS, Java, and Kotlin.
+                I'm a 21 year old developer that specializes in TS/JS, Java, and Kotlin.
             </p>
             {lanyard.status && lanyard.status.activities.filter(a => a.type != 4).length > 0 ? <>
                 <Activity activity={lanyard.status.activities.filter(a => a.type != 4)[0]} spotify={lanyard.status?.spotify}/>
