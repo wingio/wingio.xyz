@@ -1,0 +1,30 @@
+---
+import Icon from './Icon.astro'
+import type { IconName } from './Icons';
+
+interface Props {
+    url: string;
+    icon: IconName;
+}
+
+const { url, icon } = Astro.props;
+---
+
+<a class='social' href={url} rel='me' target='_blank'>
+    <Icon name={icon} size='18px' class='icon' />
+    <slot />
+</a>
+
+<style lang="scss">
+    .social {
+        display: flex;
+        color: var(--primary);
+        margin-top: 1em;
+        align-items: center;
+        gap: 0.5em;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+</style>

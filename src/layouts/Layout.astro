@@ -1,4 +1,5 @@
 ---
+import Sidebar from "@wing/components/Sidebar.astro";
 import "@wing/styles/global.css";
 
 export interface Props {
@@ -41,7 +42,29 @@ const { title, description } = Astro.props;
         </script>
 		
 		<main>
-			<slot />
+			<div class="sidebar">
+				<Sidebar />
+			</div>
+			
+			<div class="content">
+				<slot />
+			</div>
 		</main>
 	</body>
 </html>
+
+<style>
+	main {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.content {
+		width: 50em;
+	}
+	
+	.sidebar {
+		margin-right: 4em;
+	}
+</style>

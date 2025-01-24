@@ -5,20 +5,29 @@
 }
 
 .light {
-    
+    --primary: #316941;
+    --background: #f6fbf3;
+    --onSurface: #181d18;
+    --onSurfaceAlt: #414941;
+    --containerLow: #f1f5ed;
 }
 
 .dark {
-    
+    --primary: #98d4a3;
+    --background: #101510;
+    --onSurface: #dfe4dc;
+    --onSurfaceAlt: #c1c9bf;
+    --containerLow: #181d18;
 }
 
 html,
 body {
     margin: 0;
-    width: 100%;
-    height: 100%;
+    padding: 2em;
 
     font-family: "Inter";
+    background-color: var(--background);
+    color: var(--onSurface);
 }
 
 a {
