@@ -1,0 +1,35 @@
+---
+import Friend from "./Friend.astro";
+---
+
+<div class="friends" id="friendList">
+    <Friend name="Zeet" github="zt64" url="https://zt64.dev" />
+    <Friend name="Vee" github="vendicated" url="https://vendicated.dev" />
+    <Friend name="Xinto" github="X1nto" url="https://xinto.dev" />
+    <Friend name="Rushii" github="rushiiMachine" url="https://rushii.materii.dev" />
+    <Friend name="Samara" github="khcrysalis" url="https://khcrysalis.dev" />
+    <Friend name="Lewi" github="lewisakura" url="https://lewisakura.moe" />
+    <Friend name="Dolfies" github="dolfies" url="https://dolfi.es" />
+    <Friend name="Fres" github="fres621" />
+    <Friend name="Sadan" github="sadan4" url="https://sadan.zip" />
+    <Friend name="HHLS" github="HAHALOSAH" url="https://hhls.xyz" />
+    <Friend name="Nino" github="nin0-dev" url="https://nin0.dev" />
+    <Friend name="Tiramisu" github="darwinx64" />
+</div>
+
+<style>
+    .friends {
+        display: flex;
+        gap: 1.5em;
+        margin-top: 1em;
+        flex-wrap: wrap;
+    }
+</style>
+
+<script>
+    // Shuffle friends
+    const friends = document.querySelector("#friendList") as HTMLDivElement;
+    for (let i = friends.children.length; i >= 0; i--)
+        // appending an already added element moves it
+        friends.appendChild(friends.children[Math.floor(Math.random() * i)]);
+</script>

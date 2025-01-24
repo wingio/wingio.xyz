@@ -1,0 +1,26 @@
+---
+interface Props {
+    name: string,
+    github: string,
+    url?: string
+}
+
+const { name, github, url = `https://github.com/${github}` } = Astro.props
+---
+
+<a class="friend" aria-label={`Visit ${name}'s website'`} href={url}>
+    <img class="avatar" src={`https://github.com/${github}.png?size=256`} alt={`${name}'s avatar`}>
+</a>
+
+<style lang="scss">
+    .avatar {
+        width: 45px;
+        border-radius: 50%;
+        transition: all 0.2s;
+
+        &:hover {
+            box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
+            scale: 1.1;
+        }
+    }
+</style>

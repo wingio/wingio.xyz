@@ -1,13 +1,19 @@
 ---
 import Card from '@wing/components/Card.astro';
+import Friends from '@wing/components/Friends.astro';
 import Label from '@wing/components/Label.astro';
 import Layout from '@wing/layouts/Layout.astro';
 ---
 
 <Layout title="Wing - Home" description="21 year old Android dev and an okay designer.">
-	<Card>
+	<Card id="about">
 		<Label>About</Label>
 		<h1>Hello, I'm Wing</h1>
 		I am a 21 year old Android developer as well as an okay designer.
+	</Card>
+
+	<Card id="friends">
+		<Label>Friends</Label>
+		<Friends />
 	</Card>
 </Layout>
