@@ -1,28 +1,23 @@
 ---
 import avatar from "@wing/assets/avatar.jpeg"
-import Card from "./Card.astro"
-import Label from "./Label.astro"
-import SocialAccount from "./SocialAccount.astro"
+import SocialsCard from "./SocialsCard.astro"
 ---
 
-<div class=".sidebar">
-    <img src={avatar.src} class="avatar"/>
+<div class="sidebar">
+    <a href="/">
+        <img src={avatar.src} class="avatar"/>
+    </a>
 
-    <Card>
-        <Label>Socials</Label>
-
-        <SocialAccount url="https://github.com/wingio" icon="github">GitHub</SocialAccount>
-        <SocialAccount url="https://bsky.app/profile/wingio.xyz" icon="bluesky">Bluesky</SocialAccount>
-        <SocialAccount url="https://androiddev.social/@wing" icon="mastodon">Mastodon</SocialAccount>
-        <SocialAccount url="https://github.com/wingio" icon="discord">Discord</SocialAccount>
-    </Card>
+    <SocialsCard />
 </div>
 
-<style>
+<style lang="scss">
     .sidebar {
         width: 15em;
         display: flex;
         flex-direction: column;
+        position: sticky;
+        top: 4em;
     }
 
     .avatar {
@@ -30,4 +25,21 @@ import SocialAccount from "./SocialAccount.astro"
         width: 15em;
         margin-bottom: 2em;
     }
+
+    @media screen and (max-width: 970px) {
+		.sidebar {
+			width: 100%;
+            position: unset;
+		}
+
+        a {
+            align-self: center;
+            padding: 0;
+
+            .avatar {
+                width: 5em;
+                margin-top: 0.5em;
+            }
+        }
+	}
 </style>

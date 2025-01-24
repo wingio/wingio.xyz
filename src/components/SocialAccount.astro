@@ -11,7 +11,7 @@ const { url, icon } = Astro.props;
 ---
 
 <a class='social' href={url} rel='me' target='_blank'>
-    <Icon name={icon} size='18px' class='icon' />
+    <Icon name={icon} class='icon' />
     <slot />
 </a>
 
@@ -27,4 +27,12 @@ const { url, icon } = Astro.props;
             opacity: 0.8;
         }
     }
+
+    @media screen and (max-width: 970px) {
+		.social {
+            text-indent: -9999999px;
+            width: min-content;
+            gap: unset;
+        }
+	}
 </style>

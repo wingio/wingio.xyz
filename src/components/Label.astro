@@ -1,4 +1,10 @@
-<p>
+---
+interface Props {
+    class?: string
+}
+---
+
+<p class={Astro.props.class}>
     <slot />
 </p>
 

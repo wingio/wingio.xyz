@@ -1,0 +1,25 @@
+---
+import Card from "./Card.astro";
+import Label from "./Label.astro";
+import SocialAccount from "./SocialAccount.astro";
+---
+
+<Card class="socials">
+    <Label class="label">Socials</Label>
+
+    <div class="content">
+        <SocialAccount url="https://github.com/wingio" icon="github">GitHub</SocialAccount>
+        <SocialAccount url="https://bsky.app/profile/wingio.xyz" icon="bluesky">Bluesky</SocialAccount>
+        <SocialAccount url="https://androiddev.social/@wing" icon="mastodon">Mastodon</SocialAccount>
+        <SocialAccount url="https://github.com/wingio" icon="discord">Discord</SocialAccount>
+    </div>
+</Card>
+
+<style>
+    @media screen and (max-width: 970px) {
+        .content {
+            display: flex;
+            gap: 1.5em;
+        }
+	}
+</style>

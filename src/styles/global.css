@@ -30,6 +30,13 @@ body {
     color: var(--onSurface);
 }
 
+@media screen and (max-width: 970px) {
+    html,
+    body {
+        padding: 0.5em;
+    }
+}
+
 a {
     color: var(--link);
     text-decoration: none;

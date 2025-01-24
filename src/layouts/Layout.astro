@@ -53,7 +53,7 @@ const { title, description } = Astro.props;
 	</body>
 </html>
 
-<style>
+<style lang="css">
 	main {
 		display: flex;
 		justify-content: center;
@@ -61,10 +61,30 @@ const { title, description } = Astro.props;
 	}
 
 	.content {
+		display: flex;
 		width: 50em;
+		flex-direction: column;
+		gap: 2em;
 	}
 	
 	.sidebar {
 		margin-right: 4em;
+	}
+
+	@media screen and (max-width: 970px) {
+		main {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.content {
+			width: 100%;
+		}
+
+		.sidebar {
+			margin-right: 0;
+			margin-bottom: 2em;
+			width: 100%;
+		}
 	}
 </style>

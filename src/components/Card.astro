@@ -1,9 +1,15 @@
-<div class="card">
+---
+interface Props {
+    class?: string
+}
+---
+
+<div class={Astro.props.class}>
     <slot />
 </div>
 
 <style>
-    .card {
+    div {
         display: flex;
         flex-direction: column;
         border-radius: 16px;

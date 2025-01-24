@@ -9,7 +9,7 @@ interface Props {
 	class?: string;
 }
 
-const { name, label, size = '16px', color } = Astro.props;
+const { name, label, size = '18px', color } = Astro.props;
 const a11yAttrs = label ? ({ 'aria-label': label } as const) : ({ 'aria-hidden': 'true' } as const);
 ---
 
@@ -26,8 +26,14 @@ const a11yAttrs = label ? ({ 'aria-label': label } as const) : ({ 'aria-hidden':
 <style define:vars={{ 'tint': color, 'size': size }}>
 	svg {
 		color: var(--tint);
-		font-size: var(--size, 16px);
+		font-size: var(--size, 18px);
 		width: 1em;
 		height: 1em;
+	}
+
+    @media screen and (max-width: 970px) {
+		svg {
+            font-size: 24px;
+        }
 	}
 </style>
