@@ -1,22 +1,47 @@
+---
+import "@wing/styles/global.css";
+
+export interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		
+		<title>{title}</title>
+		<meta name="description" content={description}/>
+		<meta name="theme-color" content="#02E376"/>
+		<link rel="icon" href="/favicon.png" />
+
+		<meta name="og:type" content="website" />
+		<meta name="og:title" content={title} />
+		<meta name="og:description" content={description} />
+		<meta name="og:url" content={Astro.url} />
+		<meta name="og:image" content="/favicon.png" />
 	</head>
+	
 	<body>
-		<slot />
+		<script is:raw>
+            let theme = localStorage.getItem("theme");
+            if (!theme || !["light", "dark"].includes(theme)) {
+                theme = window.matchMedia("(prefers-color-scheme: dark)")
+                    .matches
+                    ? "dark"
+                    : "light";
+            }
+            document.body.classList.add(theme);
+        </script>
+		
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

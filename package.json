@@ -1,14 +1,20 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.1.8"
-  }
+    "name": "wingio.xyz",
+    "version": "0.0.1",
+    "description": "My personal site",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview"
+    },
+    "dependencies": {
+        "@astrojs/svelte": "^7.0.4",
+        "astro": "^5.1.8",
+        "sass": "^1.83.4",
+        "svelte": "^5.19.2"
+    },
+    "devDependencies": {
+        "@astrojs/sitemap": "^3.2.1",
+        "typescript": "^5.7.3"
+    }
 }
