@@ -1,0 +1,36 @@
+---
+import Icon from "./Icon.astro";
+import Label from "./Label.astro";
+import ThemeToggle from "./ThemeToggle.svelte";
+---
+
+<footer>
+    <div class="copyright">
+        <Label>© 2025 Wing</Label>
+        <a href="https://github.com/wingio/wingio.xyz" target="_blank">Source</a>
+    </div>
+
+    <ThemeToggle client:only="svelte">
+        <Icon name="sun" color="var(--primary)" slot="toggled" />
+        <Icon name="moon" color="var(--primary)" slot="untoggled" />
+    </ThemeToggle>
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .copyright {
+        display: flex;
+        flex-direction: column;
+        gap: .4em;
+    }
+
+    a {
+        font-size: 14px;
+    }
+</style>

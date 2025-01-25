@@ -38,6 +38,6 @@ body {
 }
 
 a {
-    color: var(--link);
+    color: var(--primary);
     text-decoration: none;
 }
