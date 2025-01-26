@@ -1,0 +1,29 @@
+---
+import type { GetStaticPaths } from "astro";
+export const getStaticPaths = (() => {
+    return [
+        { params: { social: "github" } },
+        { params: { social: "gh" } },
+
+        { params: { social: "bluesky" } },
+        { params: { social: "bsky" } },
+        
+        { params: { social: "mastodon" } },
+        { params: { social: "masto" } }
+    ];
+}) satisfies GetStaticPaths;
+
+switch (Astro.params.social) {
+    case "gh":
+    case "github":
+        return Astro.redirect("https://github.com/wingio");
+
+    case "bsky":
+    case "bluesky":
+        return Astro.redirect("https://bsky.app/profile/wingio.xyz");
+
+    case "masto":
+    case "mastodon":
+        return Astro.redirect("https://androiddev.social/@wing");
+}
+---
