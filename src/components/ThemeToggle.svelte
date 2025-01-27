@@ -9,8 +9,9 @@
     }
 </script>
 
-<button on:click={onClick}>
+<button onclick={onClick}>
     <div>
+        <!-- svelte-ignore slot_element_deprecated -->
         {#if toggled}
             <slot name="toggled" />
         {:else}

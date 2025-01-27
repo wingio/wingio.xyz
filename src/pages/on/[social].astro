@@ -32,5 +32,6 @@ const account: SocialAccount = SocialsMap[Astro.params.social]
 </html>
 
 <script>
+    // @ts-ignore
     window.location = document.querySelector("html")?.dataset["redirUrl"] || "about:blank"
 </script>
