@@ -1,11 +1,14 @@
 ---
+import { string } from 'astro:schema'
+
 interface Props {
     class?: string
     id?: string
+    "data-url"?: string
 }
 ---
 
-<div class={Astro.props.class} id={Astro.props.id}>
+<div class={Astro.props.class} id={Astro.props.id} data-url={Astro.props['data-url']}>
     <slot />
 </div>
 

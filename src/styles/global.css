@@ -26,6 +26,10 @@
     --star: #e2e210;
 }
 
+html {
+    overflow-y: overlay;
+}
+
 html,
 body {
     margin: 0;

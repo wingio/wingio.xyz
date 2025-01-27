@@ -4,9 +4,11 @@ import ProjectCard from "./ProjectCard.astro";
 const ProjectRepos = [
     "MateriiApps/Gloom",
     "vendetta-mod/VendettaManager",
-    "wingio/Hellish",
     "wingio/syntakts",
     "MateriiApps/pullrefresh",
+    "wingio/Hellish",
+    "cadence-app/Caddy",
+    "wingio/plugins",
     "wingio/wingio.xyz",
 ]
 
@@ -46,7 +48,7 @@ const repoData = await Promise.all(
         --cols: 2;
         display: grid;
         grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-        gap: 0.75em;
+        gap: 1em;
     }
 
     @media screen and (max-width: 970px) {
