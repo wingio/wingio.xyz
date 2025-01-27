@@ -1,29 +1,30 @@
 ---
+import { SocialsMap } from "@wing/scripts/socials";
 import type { GetStaticPaths } from "astro";
-export const getStaticPaths = (() => {
-    return [
-        { params: { social: "github" } },
-        { params: { social: "gh" } },
 
-        { params: { social: "bluesky" } },
-        { params: { social: "bsky" } },
-        
-        { params: { social: "mastodon" } },
-        { params: { social: "masto" } }
-    ];
+export const getStaticPaths = (() => {
+    return Object.keys(SocialsMap).map( (key) => { return { params: { social: key } } });
 }) satisfies GetStaticPaths;
 
-switch (Astro.params.social) {
-    case "gh":
-    case "github":
-        return Astro.redirect("https://github.com/wingio");
-
-    case "bsky":
-    case "bluesky":
-        return Astro.redirect("https://bsky.app/profile/wingio.xyz");
-
-    case "masto":
-    case "mastodon":
-        return Astro.redirect("https://androiddev.social/@wing");
-}
+// @ts-ignore
+const account: SocialAccount = SocialsMap[Astro.params.social]
+return Astro.redirect(account.baseUrl + account.username)
 ---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Redirecting...</title>
+        <meta name="theme-color" content="#02E376"/>
+		<link rel="icon" href="/favicon.png" />
+
+		<meta name="og:type" content="profile" />
+		<meta name="og:profile:username" content={account.username} />
+		<meta name="og:profile:gender" content="male" />
+
+		<meta name="og:title" content={`Wing - ${account.service}`} />
+		<meta name="og:description" content={`Follow me on ${account.service}!`} />
+		<meta name="og:url" content={account.baseUrl + account.username} />
+		<meta name="og:image" content="/favicon.png" />
+    </head>
+</html>
