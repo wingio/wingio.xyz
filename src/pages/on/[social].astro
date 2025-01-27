@@ -8,11 +8,10 @@ export const getStaticPaths = (() => {
 
 // @ts-ignore
 const account: SocialAccount = SocialsMap[Astro.params.social]
-return Astro.redirect(account.baseUrl + account.username)
 ---
 
 <!DOCTYPE html>
-<html>
+<html data-redir-url={account.baseUrl + account.username}>
     <head>
         <title>Redirecting...</title>
         <meta name="theme-color" content="#02E376"/>
@@ -27,4 +26,11 @@ return Astro.redirect(account.baseUrl + account.username)
 		<meta name="og:url" content={account.baseUrl + account.username} />
 		<meta name="og:image" content="/favicon.png" />
     </head>
+    <body>
+        Redirecting...
+    </body>
 </html>
+
+<script>
+    window.location = document.querySelector("html")?.dataset["redirUrl"] || "about:blank"
+</script>
