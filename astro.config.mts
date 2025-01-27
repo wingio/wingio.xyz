@@ -8,6 +8,10 @@ export default defineConfig({
     site: "https://www.wingio.xyz",
     integrations: [sitemap(), svelte()],
 
+    experimental: {
+        svg: true
+    },
+
     vite: {
         css: {
             preprocessorOptions: {

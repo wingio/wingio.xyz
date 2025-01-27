@@ -3,6 +3,7 @@ import Card from '@wing/components/Card.astro';
 import Footer from '@wing/components/Footer.astro';
 import Friends from '@wing/components/Friends.astro';
 import Label from '@wing/components/Label.astro';
+import Projects from '@wing/components/Projects.astro';
 import Layout from '@wing/layouts/Layout.astro';
 ---
 
@@ -13,6 +14,11 @@ import Layout from '@wing/layouts/Layout.astro';
 		I am a 21 year old Android developer as well as an okay designer.
 	</Card>
 
+	<div class="projects">
+		<Label>Projects</Label>
+		<Projects />
+	</div>
+
 	<Card id="friends">
 		<Label>Friends</Label>
 		<Friends />
@@ -20,3 +26,11 @@ import Layout from '@wing/layouts/Layout.astro';
 
 	<Footer />
 </Layout>
+
+<style>
+	.projects {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+</style>

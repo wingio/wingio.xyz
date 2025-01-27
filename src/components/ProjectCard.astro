@@ -1,0 +1,113 @@
+---
+import Card from "./Card.astro";
+import Star from "@wing/assets/star.svg"
+import colors from "@wing/assets/langColors.json";
+
+const {
+    name,
+    description,
+    language,
+    owner,
+    stargazers_count,
+    html_url,
+} = Astro.props;
+
+const stars =
+    stargazers_count > 1000 ? `${(stargazers_count / 1000).toFixed(1)}k` : stargazers_count;
+
+const avatarUrl = new URL(owner.avatar_url);
+avatarUrl.searchParams.set("size", "64");
+
+const langColor = colors[language as keyof typeof colors] || "#000"
+---
+
+<a href={html_url} target="_blank" aria-label=`Visit the ${name} repo on GitHub`>
+    <Card>
+        <div class="author">
+            <img src={avatarUrl.toString()} width="20px" />
+    
+            {owner.login}
+        </div>
+        
+        <p class="name">{name}</p>
+        <p class="description">{description}</p>
+    
+        <div class="meta">
+            <div>
+                <Star size="14px" class="star" />
+                <p>{stars}</p>
+            </div>
+    
+            <div>
+                <span class="lang" style=`--langColor:${langColor}` />
+                <p>{language}</p>
+            </div>
+        </div>
+    </Card>
+</a>
+
+
+<style lang="scss">
+    a {
+        transition: all 0.1s;
+
+        &:hover {
+            scale: 1.05;
+        }
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+        font-size: 13px;
+        color: var(--onSurfaceAlt);
+
+        img {
+            border-radius: 25%;
+        }
+    }
+
+    .name {
+        margin: 0.5em 0;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--onSurface);
+    }
+
+    .description {
+        margin: 0.2em 0;
+        font-size: 14px;
+        color: var(--onSurfaceAlt);
+    }
+
+    .meta {
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+        gap: 1em;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 0.4em;
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--onSurfaceAlt);
+        }
+        
+        .star {
+            color: var(--star);
+        }
+
+        .lang {
+            width: 14px;
+            height: 14px;
+            background-color: var(--langColor, var(--onSurfaceAlt));
+            border-radius: 50%;
+        }
+    }
+</style>
