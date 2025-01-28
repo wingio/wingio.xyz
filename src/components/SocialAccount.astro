@@ -1,17 +1,13 @@
 ---
-import Icon from './Icon.astro'
-import type { IconName } from './Icons';
-
 interface Props {
     url: string;
-    icon: IconName;
 }
 
-const { url, icon } = Astro.props;
+const { url } = Astro.props;
 ---
 
 <a class='social' href={url} rel='me' target='_blank'>
-    <Icon name={icon} class='icon' />
+    <slot name="icon"/>
     <slot />
 </a>
 
@@ -33,6 +29,11 @@ const { url, icon } = Astro.props;
             text-indent: -9999999px;
             width: min-content;
             gap: unset;
+
+            :global(svg) {
+                width: 24px;
+                height: 24px;
+            }
         }
 	}
 </style>

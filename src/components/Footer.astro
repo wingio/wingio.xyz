@@ -1,7 +1,9 @@
 ---
-import Icon from "./Icon.astro";
 import Label from "./Label.astro";
 import ThemeToggle from "./ThemeToggle.svelte";
+
+import Sun from "@icons/sun.svg";
+import Moon from "@icons/moon.svg";
 ---
 
 <footer>
@@ -11,8 +13,8 @@ import ThemeToggle from "./ThemeToggle.svelte";
     </div>
 
     <ThemeToggle client:only="svelte">
-        <Icon name="sun" color="var(--primary)" slot="toggled" />
-        <Icon name="moon" color="var(--primary)" slot="untoggled" />
+        <Sun color="var(--primary)" slot="toggled" />
+        <Moon color="var(--primary)" slot="untoggled" />
     </ThemeToggle>
 </footer>
 

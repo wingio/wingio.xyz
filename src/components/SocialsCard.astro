@@ -2,16 +2,32 @@
 import Card from "./Card.astro";
 import Label from "./Label.astro";
 import SocialAccount from "./SocialAccount.astro";
+
+import Bluesky from "@icons/social/bluesky.svg";
+import Discord from "@icons/social/discord.svg";
+import GitHub from "@icons/social/github.svg";
+import Mastodon from "@icons/social/mastodon.svg";
 ---
 
 <Card class="socials">
     <Label class="label">Socials</Label>
 
     <div class="content">
-        <SocialAccount url="https://github.com/wingio" icon="github">GitHub</SocialAccount>
-        <SocialAccount url="https://bsky.app/profile/wingio.xyz" icon="bluesky">Bluesky</SocialAccount>
-        <SocialAccount url="https://androiddev.social/@wing" icon="mastodon">Mastodon</SocialAccount>
-        <SocialAccount url="https://discord.com/users/298295889720770563" icon="discord">Discord</SocialAccount>
+        <SocialAccount url="https://github.com/wingio">
+            <GitHub slot="icon" /> GitHub
+        </SocialAccount>
+
+        <SocialAccount url="https://bsky.app/profile/wingio.xyz">
+            <Bluesky slot="icon" /> Bluesky
+        </SocialAccount>
+
+        <SocialAccount url="https://androiddev.social/@wing">
+            <Mastodon slot="icon" /> Mastodon
+        </SocialAccount>
+
+        <SocialAccount url="https://discord.com/users/298295889720770563">
+            <Discord slot="icon" /> Discord
+        </SocialAccount>
     </div>
 </Card>
 
