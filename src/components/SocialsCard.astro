@@ -5,6 +5,7 @@ import SocialAccount from "./SocialAccount.astro";
 
 import Bluesky from "@icons/social/bluesky.svg";
 import Discord from "@icons/social/discord.svg";
+import Email from "@icons/email.svg";
 import GitHub from "@icons/social/github.svg";
 import Mastodon from "@icons/social/mastodon.svg";
 ---
@@ -28,14 +29,19 @@ import Mastodon from "@icons/social/mastodon.svg";
         <SocialAccount url="https://discord.com/users/298295889720770563">
             <Discord slot="icon" /> Discord
         </SocialAccount>
+
+        <SocialAccount url="mailto:Wing <wing@wingio.xyz>">
+            <Email slot="icon" /> Email
+        </SocialAccount>
     </div>
 </Card>
 
-<style>
+<style lang="scss">
     @media screen and (max-width: 970px) {
         .content {
             display: flex;
             gap: 1.5em;
+            justify-content: space-between;
         }
 	}
 </style>
