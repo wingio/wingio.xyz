@@ -1,0 +1,48 @@
+<div class="chip">
+    <slot name="icon" />
+    <slot />
+</div>
+
+<style lang="scss">
+    .chip {
+        --sp-1x: 8px;
+        --sp-2x: 16px;
+        --fontSize: 14px;
+
+        display: flex;
+        width: fit-content;
+        align-items: center;
+        transition: scale 0.2s,
+                    box-shadow 0.2s;
+
+        font-size: var(--fontSize);
+        font-weight: 500;
+        letter-spacing: 0.1px;
+
+        gap: 0.4em;
+        padding: var(--sp-1x) var(--sp-2x);
+        border-radius: var(--sp-1x);
+
+        background-color: var(--secondaryContainer);
+        color: var(--onSecondaryContainer);
+        box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+            scale: 1.02;
+            box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+        }
+        
+        :global(svg) {
+            width: var(--sp-2x);
+            height: var(--sp-2x);
+        }
+    }
+
+    @media screen and (max-width: 970px) {
+		.chip {
+            --sp-1x: 8px;
+            --sp-2x: 14px;
+            --fontSize: 13px;
+        }
+	}
+</style>

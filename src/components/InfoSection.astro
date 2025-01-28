@@ -1,0 +1,41 @@
+---
+import InfoChip from "./InfoChip.astro";
+import Person from "@wing/assets/person.svg";
+import Location from "@wing/assets/location.svg";
+import Clock from "@wing/assets/clock.svg";
+---
+
+<div class="info">
+    <InfoChip>
+        <Person slot="icon"/> He/Him
+    </InfoChip>
+
+    <InfoChip>
+        <Clock slot="icon"/> EST <span>-</span> <span id="time"/>
+    </InfoChip>
+
+    <InfoChip>
+        <Location slot="icon"/> USA
+    </InfoChip>
+</div>
+
+<script>
+    function updateTime() {
+        var currentTime = new Date();
+        var timeString = currentTime.toLocaleString('en-US', { timeStyle: "short", timeZone: "America/New_York" });
+
+        document.getElementById("time")!.textContent = timeString;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+</script>
+
+<style>
+    .info {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8em;
+		margin-top: 1em;
+	}
+</style>
