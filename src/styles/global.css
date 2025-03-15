@@ -30,6 +30,32 @@
     --star: #e2e210;
 }
 
+.mocha {
+    --primary: #cba6f7;
+    --inversePrimary: #89b4fa;
+    --secondaryContainer: #45475a;
+    --onSecondaryContainer: #cdd6f4;
+    --background: #11111b;
+    --onSurface: #cdd6f4;
+    --onSurfaceAlt: #bac2de;
+    --containerLow: #1e1e2e;
+
+    --star: #f9e2af;
+}
+
+.latte {
+    --primary: #04a5e5;
+    --inversePrimary: #1e66f5;
+    --secondaryContainer: #ccd0da;
+    --onSecondaryContainer: #4c4f69;
+    --background: #dce0e8;
+    --onSurface: #4c4f69;
+    --onSurfaceAlt: #4c4f69;
+    --containerLow: #e6e9ef;
+
+    --star: #df8e1d;
+}
+
 html {
     overflow-y: overlay;
 }

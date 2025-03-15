@@ -1,11 +1,13 @@
 <script lang="ts">
     import { getTheme, setTheme } from "@wing/scripts/theme"
 
-    let toggled = $state.raw(getTheme() == "dark");
+    const darkThemes = ["dark", "mocha"]
+    const lightThemes = ["light", "latte"]
+    let toggled = $state.raw(darkThemes.includes(getTheme()));
 
     function onClick(e: MouseEvent) {
-        setTheme();
-        toggled = getTheme() == "dark"
+        setTheme(toggled ? lightThemes[darkThemes.indexOf(getTheme())] : darkThemes[lightThemes.indexOf(getTheme())]);
+        toggled = darkThemes.includes(getTheme())
     }
 </script>
 

@@ -33,14 +33,22 @@ const { title, description } = Astro.props;
 	
 	<body>
 		<script is:raw>
+			console.log("%cTry running cattpuccin()!", "font-size: 2em; background-color: #11111b; color: #cdd6f4; padding: 1em")
+
             let theme = localStorage.getItem("theme");
-            if (!theme || !["light", "dark"].includes(theme)) {
+            if (!theme || !["light", "dark", "mocha", "latte"].includes(theme)) {
                 theme = window.matchMedia("(prefers-color-scheme: dark)")
                     .matches
                     ? "dark"
                     : "light";
             }
             document.body.classList.add(theme);
+
+			function catppuccin() {
+				localStorage.setItem("theme", "mocha");
+				document.body.classList.add("mocha");
+    			document.body.classList.remove("dark", "light", "latte")
+			}
         </script>
 		
 		<main>
