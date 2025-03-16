@@ -1,6 +1,7 @@
 ---
 import avatar from "@wing/assets/avatar.jpeg"
 import SocialsCard from "./SocialsCard.astro"
+import NowPlayingCard from "./NowPlayingCard.astro"
 ---
 
 <div class="sidebar">
@@ -9,6 +10,10 @@ import SocialsCard from "./SocialsCard.astro"
     </a>
 
     <SocialsCard />
+
+    <div id="np-section">
+        <NowPlayingCard />
+    </div>
 </div>
 
 <style lang="scss">
@@ -18,12 +23,16 @@ import SocialsCard from "./SocialsCard.astro"
         flex-direction: column;
         position: sticky;
         top: 4em;
+        gap: 2em;
     }
 
     .avatar {
         border-radius: 50%;
         width: 15em;
-        margin-bottom: 2em;
+    }
+
+    #np-section {
+        display: none;
     }
 
     @media screen and (max-width: 970px) {
@@ -43,3 +52,27 @@ import SocialsCard from "./SocialsCard.astro"
         }
 	}
 </style>
+
+<script>
+    import { DEFAULT_IMAGE_ID, getNowPlaying } from "@wing/scripts/lastfm";
+
+    function updateNowPlaying() {
+        getNowPlaying()
+            .then((track) => {
+                document.getElementById("np-section")!.style.setProperty("display", typeof track != "undefined" ? "block" : "none");
+                document.getElementById("np-song")!.innerText = track?.name || "";
+                document.getElementById("np-artist")!.innerText = track?.artist?.["#text"] || "";
+
+                let artUrl = track?.image[3]?.["#text"];
+                let art = (document.getElementById("np-art") as HTMLImageElement)
+
+                art.src = artUrl || "";
+                art.alt = track?.name || "";
+                art.style.setProperty("display", artUrl?.includes(DEFAULT_IMAGE_ID) ? "none" : "block")
+                document.getElementById("np-placeholder")!.style.setProperty("display", artUrl?.includes(DEFAULT_IMAGE_ID) ? "block" : "none")
+            })
+    }
+
+    setInterval(updateNowPlaying, 10000)
+    updateNowPlaying()
+</script>
