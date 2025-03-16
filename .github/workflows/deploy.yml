@@ -17,7 +17,8 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Setup Environment Variables
-        run: echo "${{ secrets.LASTFM_TOKEN }}" > $GITHUB_WORKSPACE/.env
+        run: |
+          echo "PUBLIC_LASTFM_TOKEN=${{ secrets.LASTFM_TOKEN }}" >> $GITHUB_WORKSPACE/.env
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
