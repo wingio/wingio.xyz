@@ -70,6 +70,19 @@ body {
     color: var(--onSurface);
 }
 
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+   
+::-webkit-scrollbar-track {
+    background-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: color-mix(in srgb, var(--onSurface) 40%, transparent);
+    border-radius: 5em;
+}
+
 @media screen and (max-width: 970px) {
     html,
     body {
