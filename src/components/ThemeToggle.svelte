@@ -11,7 +11,7 @@
     }
 </script>
 
-<button onclick={onClick}>
+<button onclick={onClick} name="Toggle theme">
     <div>
         <!-- svelte-ignore slot_element_deprecated -->
         {#if toggled}
